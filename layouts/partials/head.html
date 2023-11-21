@@ -1,0 +1,14 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    {{/* Create a custom variable as a relative url to the static bootstrap css file */}}
+    {{ $bootstrap_css := "bootstrap-5/css/bootstrap.min.css" | relURL }}
+    <link rel="stylesheet" href="{{ $bootstrap_css }}">
+
+    {{/* Create a custom variable as a relative url to the static bootstrap js file */}}
+    {{ $bootstrap_js := "bootstrap-5/js/bootstrap.bundle.min.js" | relURL }}
+    <script src="{{ $bootstrap_js }}"></script>
+
+    <title>{{ .Title }}</title>
+</head>
