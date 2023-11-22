@@ -9,4 +9,17 @@
     </div>
 </div>
 
+
+
+{{ $about := .Site.GetPage "about/about.md" }}
+{{ $projects := .Site.GetPage "project/" }}
+
+{{ if $about }}
+{{ partial "sections/about.html" $about }}
+{{ end }}
+
+{{ if $projects }}
+{{ partial "sections/projects.html" $projects }}
+{{ end }}
+
 {{ end }}
