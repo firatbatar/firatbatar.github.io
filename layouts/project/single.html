@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="text-center my-4">
+        {{ $image := resources.Get .Params.coverImage }}
+        <img src="{{ $image.RelPermalink }}" alt="">
+    </div>
+
+    <h1 class="text-center">{{ .Title }}</h1>
+
+    {{/* Get the date of the project */}}
+    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+    <i class="fa-regular fa-calendar"></i>
+    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+
+    <br>
+
+    {{ range .Params.tags }}
+    <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+    {{ end }}
+
+    <div class="my-5 pb-5">
+        {{ .Content }}
+    </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<h1 class="text-center my-5">{{ .Title }}</h1>
+
+{{ range .Pages }}
+<div class="container">
+    <div class="py-4 px-0 mb-4 container-fluid  bg-body-tertiary rounded-3 row">
+        <div class="col-lg-4">
+            {{ $image := resources.Get .Params.coverImage }}
+            <img src="{{ $image.RelPermalink }}" alt="" style="max-width: 100%">
+        </div>
+
+        <div class="col d-flex flex-column justify-content-between">
+            <h2>{{ .Title }}</h2>
+            <span>
+                {{ .Summary | markdownify }}
+            </span>
+
+            <a href="{{ .RelPermalink }}" class="btn btn-primary align-self-end">
+                Details
+                <i class="fa-solid fa-caret-right" style="color: #ffffff;"></i>
+            </a>
+        </div>
+    </div>
+</div>
+{{ end }}
+
+{{ end }}

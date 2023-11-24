@@ -2,9 +2,6 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Fırat Batar'
 
-[params]
-    homeText = "Hello!"
-
 [markup.goldmark.renderer]
   unsafe = true
 
@@ -19,5 +16,5 @@ title = 'Fırat Batar'
     weight = 20
 [[menu.main]]
     name = 'Projects'
-    pageRef = '/projects'
+    pageRef = '/project'
     weight = 30
