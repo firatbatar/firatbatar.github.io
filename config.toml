@@ -10,3 +10,17 @@ title = 'Fırat Batar'
 
 [markup.goldmark.renderer]
   unsafe = true
+
+[menu]
+[[menu.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+[[menu.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 20
+[[menu.main]]
+    name = 'Projects'
+    pageRef = '/projects'
+    weight = 30

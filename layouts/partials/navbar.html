@@ -1,0 +1,17 @@
+{{ with site.Menus.main }}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            {{ range . }}
+            <li class="nav-item">
+                {{ if $.IsMenuCurrent .Menu . }}
+                <a class="nav-link active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
+                {{ else }}
+                <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
+                {{ end }}
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</nav>
+{{ end }}
