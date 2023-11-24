@@ -2,9 +2,6 @@ baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Fırat Batar'
 
-[permalinks]
-  about = "/:filename/"
-
 [params]
     homeText = "Hello!"
 
