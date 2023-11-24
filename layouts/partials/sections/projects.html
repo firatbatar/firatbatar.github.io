@@ -1,8 +1,36 @@
+{{ define "head-styles" }}
+
+{{ $carousel_style := "css/carousel_style.css" | relURL }}
+<link rel="stylesheet" href="{{ $carousel_style }}">
+
+{{ end }}
+
+
 <section id="projects" class="my-5 py-5">
-    <div class="row">
-        <h1 class="text-center my-3">{{ .Title }}</h1>
-        {{ range .Pages }}
-        {{ partial "card.html" . }}
-        {{ end }}
+    <div id="projectsCarousel" class="carousel">
+        <div class="carousel-inner">
+            {{ range .Pages }}
+            <div class="carousel-item">
+                {{ partial "card.html" . }}
+            </div>
+            {{ end }}
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+            <i class="fa-solid fa-angle-left text-dark"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+            <i class="fa-solid fa-angle-right text-dark"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 </section>
+
+
+{{ define "body-scripts" }}
+
+{{ $carousel_script := "js/carousel_script.js" | relURL }}
+<script src="{{ $carousel_script }}"></script>
+
+{{ end }}
