@@ -2,6 +2,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
+    {{/*  Meta tags  */}}
+    <meta name="keywords" content="Fırat Batar">
+    <meta name="description" content="Personal website Fırat Batar">
+    <meta name="author" content="Fırat Batar">
+
+    {{/*  Meta tags for Open Graph  */}}
+    <meta property="og:title" content="Fırat Batar's Website">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firatbatar.com">
+    {{/*  <meta property="og:image" content="https://firatbatar.com/images/firatbatar.jpg">  */}}
+    <meta property="og:description" content="Personal website Fırat Batar">
+
+
     {{/* Create a custom variable as a relative url to the static bootstrap css file */}}
     {{ $bootstrap_css := "bootstrap-5/css/bootstrap.min.css" | relURL }}
     <link rel="stylesheet" href="{{ $bootstrap_css }}">
