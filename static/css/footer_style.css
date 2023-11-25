@@ -1,0 +1,20 @@
+.contact-links {
+    /* center children */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.contact-links a {
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.made-with-hugo img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+}

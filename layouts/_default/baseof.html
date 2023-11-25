@@ -12,7 +12,11 @@
         </main>
     </div>
 
-    {{ block "body-scripts" . }} {{ end }}
+    {{/*  Add custom js  */}}
+    {{ $carousel_script := "js/carousel_script.js" | relURL }}
+    <script src="{{ $carousel_script }}"></script>
+
+    {{ partial "footer.html" . }}
 </body>
 
 </html>

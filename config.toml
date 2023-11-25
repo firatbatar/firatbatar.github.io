@@ -1,6 +1,10 @@
-baseURL = 'http://example.org/'
+baseURL = 'http://firatbatar.com/'
 languageCode = 'en-us'
 title = 'Fırat Batar'
+
+[params]
+    github = 'https://github.com/firatbatar'
+    linkedin = ''
 
 [markup.goldmark.renderer]
   unsafe = true

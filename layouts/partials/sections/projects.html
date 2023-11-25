@@ -1,11 +1,3 @@
-{{ define "head-styles" }}
-
-{{ $carousel_style := "css/carousel_style.css" | relURL }}
-<link rel="stylesheet" href="{{ $carousel_style }}">
-
-{{ end }}
-
-
 <section id="projects" class="my-5 py-5">
     <div id="projectsCarousel" class="carousel">
         <div class="carousel-inner">
@@ -26,11 +18,3 @@
         </button>
     </div>
 </section>
-
-
-{{ define "body-scripts" }}
-
-{{ $carousel_script := "js/carousel_script.js" | relURL }}
-<script src="{{ $carousel_script }}"></script>
-
-{{ end }}
