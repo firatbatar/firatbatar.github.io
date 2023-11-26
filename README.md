@@ -7,7 +7,7 @@ A personal website that showcases my portfolio and other information about me. I
 ## Features
 
 - About Me: Providing information about my background, skills, and interests.
-- Portfolio: Displaying my projects and work samples.
+- Projects: Displaying my projects and work samples.
 <!-- - Blog: Sharing my thoughts, experiences, and tutorials. -->
 <!-- - Contact: Allowing visitors to get in touch with me. -->
 
