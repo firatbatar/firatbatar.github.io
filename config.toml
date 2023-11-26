@@ -2,6 +2,8 @@ baseURL = 'http://firatbatar.com/'
 languageCode = 'en-us'
 title = 'Fırat Batar'
 
+disableKinds = ['taxonomy', 'term']
+
 [params]
     github = 'https://github.com/firatbatar'
     linkedin = ''
