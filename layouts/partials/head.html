@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ $bootstrap_css }}">
 
     {{/*  Add custom css  */}}
+    {{ $color_classes := "css/bootstrap_color_classes.css" | relURL }}
+    <link rel="stylesheet" href="{{ $color_classes }}">
     {{ $color_mode_style := "css/colormode_style.css" | relURL }}
     <link rel="stylesheet" href="{{ $color_mode_style }}">
     {{ $carousel_style := "css/carousel_style.css" | relURL }}

@@ -1,10 +1,10 @@
 {{ define "main"}}
 
 <div class="container">
-    <div id="home-jumbotron" class="p-5 mb-4 bg-body-tertiary rounded-3 text-center">
+    <div id="hero" class="p-5 mb-4 rounded-3 text-center">
         <div class="container-fluid py-5">
             <h1>{{ .Title }}</h1>
-            <p class="font-125">{{ .Site.Params.homeText | markdownify }}</p>
+            <p>{{ .Site.Params.homeText | markdownify }}</p>
         </div>
     </div>
 </div>

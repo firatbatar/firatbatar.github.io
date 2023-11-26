@@ -1,17 +1,17 @@
-<footer class="d-flex flex-column justify-content-center align-items-center">
+<footer class="d-flex flex-column justify-content-center align-items-center bg-dark">
     {{/*  Contact links  */}}
     <div class="contact-links my-4">
         <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github fa-2xl" style="color: #000;"></i>
+            <i class="fa-brands fa-github fa-2xl text-dark-subtle"></i>
         </a>
         <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin fa-2xl" style="color: #0077b5;"></i>
+            <i class="fa-brands fa-linkedin fa-2xl text-dark-subtle" style="color: #0077b5;"></i>
         </a>
     </div>
 
     {{/*  Made with Hugo  */}}
     <div class="made-with-hugo my-3">
-        <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark-subtle">
             {{ $hugo_icon := resources.Get "images/hugo-icon.png" }}
             <img src="{{ $hugo_icon.RelPermalink }}" alt="Hugo Logo">
             Made with Hugo
@@ -20,6 +20,6 @@
 
     {{/*  Copyright  */}}
     <div class="copy-rights my-1">
-        <p>&copy; {{ now.Format "2006" }} Fırat Batar</p>
+        <p class="text-dark-subtle">&copy; {{ now.Format "2006" }} Fırat Batar</p>
     </div>
 </footer>
