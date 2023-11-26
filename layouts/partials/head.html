@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ $bootstrap_css }}">
 
     {{/*  Add custom css  */}}
+    {{ $color_mode_style := "css/colormode_style.css" | relURL }}
+    <link rel="stylesheet" href="{{ $color_mode_style }}">
     {{ $carousel_style := "css/carousel_style.css" | relURL }}
     <link rel="stylesheet" href="{{ $carousel_style }}">
     {{ $footer_style := "css/footer_style.css" | relURL }}
@@ -34,5 +36,11 @@
     {{ $jqeury := "jquery/jquery-3.7.1.min.js" | relURL }}
     <script src="{{ $jqeury }}"></script>
 
+
+    {{/*  Color mode start script  */}}
+    <script>
+        localStorage.setItem('color-mode', 'light');
+        $('html').addClass('light');
+    </script>
     <title>{{ .Title }}</title>
 </head>

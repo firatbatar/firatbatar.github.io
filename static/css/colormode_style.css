@@ -1,0 +1,15 @@
+.dark #dark-mode-toggle-icon {
+    display: none;
+}
+
+.dark #light-mode-toggle-icon {
+    display: inline-block;
+}
+
+.light #dark-mode-toggle-icon {
+    display: inline-block;
+}
+
+.light #light-mode-toggle-icon {
+    display: none;
+}

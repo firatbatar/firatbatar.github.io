@@ -13,6 +13,8 @@
     </div>
 
     {{/*  Add custom js  */}}
+    {{ $color_mode_script := "js/colormode_script.js" | relURL }}
+    <script src="{{ $color_mode_script }}"></script>   
     {{ $carousel_script := "js/carousel_script.js" | relURL }}
     <script src="{{ $carousel_script }}"></script>
 
