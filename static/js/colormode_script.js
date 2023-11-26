@@ -1,20 +1,25 @@
-// Get the current color mode from local storage
+function setColorMode() {
+    let colorMode = localStorage.getItem('colorMode');
+    $('html').removeClass();  // Remove all classes from the html tag
+    $('html').addClass(colorMode);
+    $('html').attr('data-bs-theme', colorMode);
+}
 
-// Add event listener to the button
+
+if (!localStorage.getItem('colorMode')) {
+    localStorage.setItem('colorMode', 'light');
+}
+
 $(document).ready(() => {
+    setColorMode();
     $('#color-mode-toggle-btn').click(() => {
-        let currentColorMode = localStorage.getItem('colorMode');  // Get the current color mode from local storage
-        $('html').removeClass();  // Remove all classes from the html tag
-        
         // Change the color mode
-        if (currentColorMode === 'light') {
+        if (localStorage.getItem('colorMode') === 'light') {
             localStorage.setItem('colorMode', 'dark');
-            $('html').addClass('dark');
-            $('html').attr('data-bs-theme', 'dark');
         } else {
             localStorage.setItem('colorMode', 'light');
-            $('html').addClass('light');
-            $('html').attr('data-bs-theme', 'light');
         }
+
+        setColorMode();
     });
 });

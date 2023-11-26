@@ -37,12 +37,6 @@
     {{/*  Add jqeury  */}}
     {{ $jqeury := "jquery/jquery-3.7.1.min.js" | relURL }}
     <script src="{{ $jqeury }}"></script>
-
-
-    {{/*  Color mode start script  */}}
-    <script>
-        localStorage.setItem('color-mode', 'light');
-        $('html').addClass('light');
-    </script>
+    
     <title>{{ .Title }}</title>
 </head>
