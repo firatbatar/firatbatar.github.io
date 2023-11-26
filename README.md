@@ -1,6 +1,6 @@
 # Personal Website
 
-Go the the website [:link:](firatbatar.com)  
+Go the the website [:link:](https://firatbatar.com/)  
 
 ## Description
 
