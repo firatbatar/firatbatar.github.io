@@ -1,5 +1,7 @@
 # Personal Website
 
+Go the the website [:link:](firatbatar.com)  
+
 ## Description
 
 A personal website that showcases my portfolio and other information about me. It is built using the [Hugo](https://gohugo.io/) static site generator.
