@@ -5,13 +5,13 @@
     {{ end }}
     <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="{{ lower .Title }}-img">
     
-    <div class="card-head mx-3 mt-3 w-75">
+    <div class="card-head mx-3 mt-3 pt-3 w-75">
         {{ range .Params.tags }}
         <span class="badge rounded-pill bg-secondary">{{ . }}</span>
         {{ end }}
     </div>
 
-    <div class="card-body">
+    <div class="card-body pt-4 pb-5">
         <h5 class="card-title">{{ .Title }}</h5>
         <p class="card-text">{{ .Summary | markdownify }}</p>
     </div>
