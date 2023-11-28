@@ -1,8 +1,12 @@
 {{ define "main" }}
 
 <div class="text-center mb-4 bg-dark-subtle">
-    {{ $image := resources.Get .Params.coverImage }}
-    <img src="{{ $image.RelPermalink }}" alt="">
+    {{ $image := .Resources.GetMatch .Params.coverImage }}
+    {{ if not $image }}
+    {{ $image = resources.Get .Site.Params.placeholderImage }}
+    {{ end }}
+    
+    <img src="{{ $image.RelPermalink }}" alt="{{ lower .Title }}-img" style="max-width: 30vw; height: auto;">
 </div>
 
 <div class="container">
