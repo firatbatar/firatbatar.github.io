@@ -1,4 +1,16 @@
-{{ define "main"}}
+{{ define "meta_tags" }}
+    <meta name="description" content="The personal website of Fırat Batar">
+    <meta name="keywords" content="Fırat Batar">
+    {{/*  Meta tags for Open Graph  */}}
+    <meta property="og:title" content="Fırat Batar's Website">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firatbatar.com">
+    {{/*  <meta property="og:image" content="https://firatbatar.com/images/firatbatar.jpg">  */}}
+    <meta property="og:description" content="The personal website of Fırat Batar.">
+
+{{ end }}
+
+{{ define "main" }}
 
 <div class="container">
     <div id="hero" class="p-5 mb-4 rounded-3 text-center">

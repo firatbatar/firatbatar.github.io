@@ -1,3 +1,16 @@
+{{ define "meta_tags" }}
+
+    <meta name="description" content="Fırat Batar's '{{ .Title }}' project">
+    <meta name="keywords" content="Fırat Batar, {{ .Params.keywords }}">
+    {{/*  Meta tags for Open Graph  */}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firatbatar.com/project">
+    <meta property="og:site_name" content="firatbatar" />
+    <meta property="og:description" content="Fırat Batar's {{ .Title }} project.">
+
+{{ end }}
+
 {{ define "main" }}
 
 <div class="text-center mb-4 bg-dark-subtle">
