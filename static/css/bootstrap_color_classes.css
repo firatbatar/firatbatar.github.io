@@ -1,6 +1,0 @@
-@import "../bootstrap-5/css/bootstrap.min.css";
-
-.text-dark-subtle {
-    /* To avoid color change in dark mode copy the color code instead of the var */
-    color: #ced4da !important;
-}

@@ -15,16 +15,9 @@
     <link rel="stylesheet" href="{{ $bootstrap_css }}">
 
     {{/*  Add custom css  */}}
-    {{ $color_classes := "css/bootstrap_color_classes.css" | relURL }}
-    <link rel="stylesheet" href="{{ $color_classes }}">
-    {{ $color_mode_style := "css/colormode_style.css" | relURL }}
-    <link rel="stylesheet" href="{{ $color_mode_style }}">
-    {{ $carousel_style := "css/carousel_style.css" | relURL }}
-    <link rel="stylesheet" href="{{ $carousel_style }}">
-    {{ $footer_style := "css/footer_style.css" | relURL }}
-    <link rel="stylesheet" href="{{ $footer_style }}">
-    {{ $return_to_top_style := "css/return_to_top_style.css" | relURL }}
-    <link rel="stylesheet" href="{{ $return_to_top_style }}">
+    {{ $custom_css := "css/style.css" | relURL }}
+    <link rel="stylesheet" href="{{ $custom_css }}">
+
 
     {{ $bootstrap_js := "bootstrap-5/js/bootstrap.bundle.min.js" | relURL }}
     <script src="{{ $bootstrap_js }}"></script>
