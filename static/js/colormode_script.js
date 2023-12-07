@@ -22,4 +22,16 @@ $(document).ready(() => {
 
         setColorMode();
     });
+
+    $('#color-mode-toggle-btn-sb').click(() => {
+        console.log('clicked');
+        // Change the color mode
+        if (localStorage.getItem('colorMode') === 'light') {
+            localStorage.setItem('colorMode', 'dark');
+        } else {
+            localStorage.setItem('colorMode', 'light');
+        }
+
+        setColorMode();
+    });
 });

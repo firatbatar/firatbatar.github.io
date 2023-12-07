@@ -1,17 +1,21 @@
 /* Colours and Colour(Dark) Mode */
-.dark #dark-mode-toggle-icon {
+.dark #dark-mode-toggle-icon,
+.dark #dark-mode-toggle-icon-sb {
     display: none;
 }
 
-.dark #light-mode-toggle-icon {
+.dark #light-mode-toggle-icon,
+.dark #light-mode-toggle-icon-sb {
     display: inline-block;
 }
 
-.light #dark-mode-toggle-icon {
+.light #dark-mode-toggle-icon,
+.light #dark-mode-toggle-icon-sb {
     display: inline-block;
 }
 
-.light #light-mode-toggle-icon {
+.light #light-mode-toggle-icon,
+.light #light-mode-toggle-icon-sb {
     display: none;
 }
 
@@ -93,4 +97,23 @@
     bottom: 1.5rem;
     right: 1.5rem;
     cursor: pointer;
+}
+
+/* Navbar/Sidebar */
+.navbar_wrapper {
+    display: block;
+}
+
+.mobile_sidebar_wrapper {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .navbar_wrapper {
+        display: none;
+    }
+
+    .mobile_sidebar_wrapper {
+        display: block;
+    }
 }
