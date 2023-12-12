@@ -19,4 +19,4 @@ Join me in exploring the endless possibilities at the nexus of computer science,
 
 ## Contact
 
-You can find me on [GitHub](https://github.com/firatbatar) and [LinkedIn](https://www.linkedin.com/in/firatbatar/) or reach out via email at [firat@firatbatar.com](mailto:firat@firatbatar.com)
+You can find me on [GitHub](https://github.com/firatbatar) and [LinkedIn](https://www.linkedin.com/in/f%C4%B1rat-batar-a22695221/) or reach out via email at [firat@firatbatar.com](mailto:firat@firatbatar.com)
