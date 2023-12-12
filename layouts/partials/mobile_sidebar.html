@@ -1,7 +1,6 @@
-{{ with site.Menus.main }}
 <nav class="navbar navbar-expand-lg text-light py-3">
     <div class="container-fluid" id="navbarNav">
-        <a href="/" class="nav-item nav-link fs-3 fw-bold ms-4">Fırat Batar</a>
+        <a href="/" class="nav-item nav-link fs-3 fw-bold ms-4">{{ .Site.Title }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <i class="fa-solid fa-bars text-dark-subtle"></i>
@@ -18,6 +17,7 @@
             </div>
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    {{ with site.Menus.main }}
                     {{ range . }}
                     <li class="nav-item">
                         {{ if $.IsMenuCurrent .Menu . }}
@@ -28,9 +28,9 @@
                         {{ end }}
                     </li>
                     {{ end }}
+                    {{ end }}
                 </ul>
             </div>
         </div>
     </div>
 </nav>
-{{ end }}
