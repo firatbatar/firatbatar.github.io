@@ -6,7 +6,7 @@ disableKinds = ['taxonomy', 'term']
 
 [params]
     github = 'https://github.com/firatbatar'
-    linkedin = 'https://www.linkedin.com/in/fırat-batar-a22695221/'
+    linkedin = 'https://www.linkedin.com/in/firatbatar/'
     placeholderImage = 'images/placeholder600x400.png'
 
 [markup.goldmark.renderer]
