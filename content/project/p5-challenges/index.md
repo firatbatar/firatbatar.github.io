@@ -21,6 +21,3 @@ I've followed [The Coding Train](https://www.youtube.com/user/shiffman) on YouTu
 
 I'll be posting the challenges to [this page](https://firatbatar.com/p5-challenges) and I'll be posting the code to [this repository](https://github.com/firatbatar/p5-challenges). More details about the challenges can be found on the page and the GitHub repo.
 <br/>
-
-## Challenges
-- [Double Pendulum](https://firatbatar.com/p5-challenges/challenge/double-pendulum)
