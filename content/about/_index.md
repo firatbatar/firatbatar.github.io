@@ -1,7 +1,6 @@
 ---
 title: "About Me"
 summary: Welcome to my digital space! I'm Fırat, a passionate explorer in the realms of computer science and mathematics. Currently pursuing a major in computer science and a minor in mathematics, my academic endeavors fuel my fascination with the intricacies of problem-solving.
-draft: true
 ---
 
 Welcome to my digital space! I'm Fırat, a passionate explorer in the realms of computer science and mathematics. Currently pursuing a major in computer science and a minor in mathematics, my academic endeavors fuel my fascination with the intricacies of problem-solving.
