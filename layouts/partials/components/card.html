@@ -5,17 +5,30 @@
     {{ end }}
     <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="{{ lower .Title }}-img">
     
-    <div class="card-head mx-3 mt-3 pt-3 w-75">
-        {{ range .Params.tags }}
-        <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+        
+    <div class="card-status text-end mt-2 me-2">
+        {{ if eq .Params.status "complete" }}
+        <span class="badge text-bg-success fs-6">{{ .Params.status }}</span>
+        {{ end }}
+        {{ if eq .Params.status "active" }}
+        <span class="badge text-bg-info fs-6">{{ .Params.status }}</span>
+        {{ end }}
+        {{ if eq .Params.status "inprogress" }}
+        <span class="badge text-bg-warning fs-6">{{ .Params.status }}</span>
         {{ end }}
     </div>
-
-    <div class="card-body pt-4 pb-5">
+    
+    <div class="card-body pt-4">
         <h5 class="card-title">{{ .Title }}</h5>
         <p class="card-text">{{ .Summary | markdownify }}</p>
+        
+        <div class="card-tags mt-5">
+            {{ range .Params.tags }}
+            <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+            {{ end }}
+        </div>
     </div>
-    
+        
     <div class="card-footer">
         <a href="{{ .RelPermalink }}" class="btn btn-primary float-end">
             Details

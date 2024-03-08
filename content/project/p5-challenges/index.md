@@ -1,5 +1,6 @@
 ---
 title: "p5.js Challenges"
+status: "active"
 date: 2023-12-12T22:00:31+03:00
 coverImage: images/placeholder600x400.png
 tags: [JavaScript, p5.js, Coding Challenge]

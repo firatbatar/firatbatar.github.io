@@ -1,5 +1,6 @@
 ---
 title: "My Reddit Data"
+status: "complete"
 date: 2024-01-15T13:43:33+03:00
 coverImage: projectPageImage.png
 tags: [Data Science, Python, Reddit, PRAW, Altair, Pandas, Jupyter Notebook]

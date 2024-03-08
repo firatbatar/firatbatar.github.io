@@ -31,15 +31,49 @@
     <i class="fa-regular fa-calendar"></i>
     <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
 
+    <span class="ms-3">
+        {{ if eq .Params.status "complete" }}
+            <span class="badge text-bg-success fs-6">Complete</span>
+            <button class="bg-transparent border-0 text-primary"
+                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.complete }}">
+                <i class="fa-solid fa-circle-question"></i>
+            </button>
+        {{ end }}
+
+        {{ if eq .Params.status "active" }}
+            <span class="badge text-bg-info fs-6">Active</span>
+            <button class="bg-transparent border-0 text-primary"
+                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.active }}">
+                <i class="fa-solid fa-circle-question"></i>
+            </button>
+        {{ end }}
+
+        {{ if eq .Params.status "inprogress" }}
+            <span class="badge text-bg-warning fs-6">In-progress</span>
+            <button class="bg-transparent border-0 text-primary"
+                data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.inprogress }}">
+                <i class="fa-solid fa-circle-question"></i>
+            </button>
+        {{ end }}
+
+    </span>
+
     <br>
 
     {{ range .Params.tags }}
-    <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+    <span class="badge rounded-pill bg-secondary mt-2">{{ . }}</span>
     {{ end }}
 
     <div class="my-5 pb-5">
         {{ .Content }}
     </div>
+
+    <script>
+        // Activate Bootstrap tooltips
+        $(document).ready(function(){
+            $('[data-bs-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </div>
 
 {{ end }}

@@ -1,5 +1,6 @@
 ---
 title: "Personal Website"
+status: "active"
 date: 2023-11-26T14:06:59+03:00
 coverImage: myWebsiteImage.png
 tags: [Web Development, Hugo, Bootstrap, GitHub Pages]

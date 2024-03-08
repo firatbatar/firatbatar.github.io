@@ -47,8 +47,10 @@
 }
 
 .card-img-top {
+    min-height: 13rem;
+    height: 13rem;
+    object-fit: cover;
     width: 100%;
-    height: auto;
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
 }

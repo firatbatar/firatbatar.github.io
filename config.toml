@@ -8,6 +8,11 @@ disableKinds = ['taxonomy', 'term']
     github = 'https://github.com/firatbatar'
     linkedin = 'https://www.linkedin.com/in/firatbatar/'
     placeholderImage = 'images/placeholder600x400.png'
+    
+    [params.status]
+        complete = "This means that I've developed this project into a state that I'm happy with and I will not continue to work on it in the future (most probably!)."
+        active = "This means that I've developed this project into a state that I'm happy with, but I am still maintaing it and updating it with new features."
+        inprogress = "This means that I've started to work on this project and it's still in development (let's just hope that I'll finish it one day!)."
 
 [markup.goldmark.renderer]
   unsafe = true
