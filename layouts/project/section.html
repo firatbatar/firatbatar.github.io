@@ -1,14 +1,14 @@
 {{ define "meta_tags" }}
 
-    <meta name="description" content="Fırat Batar's Projects">
-    <meta name="keywords" content="Fırat Batar, projects">
-    {{/*  Meta tags for Open Graph  */}}
-    <meta property="og:title" content="Projects">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://firatbatar.com/project">
-    <meta property="og:site_name" content="firatbatar"/>
-    <meta property="og:description" content="Fırat Batar's projects.">
-    
+<meta name="description" content="Fırat Batar's Projects">
+<meta name="keywords" content="Fırat Batar, projects">
+{{/* Meta tags for Open Graph */}}
+<meta property="og:title" content="Projects">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://firatbatar.com/project">
+<meta property="og:site_name" content="firatbatar" />
+<meta property="og:description" content="Fırat Batar's projects.">
+
 {{ end }}
 
 {{ define "main" }}
@@ -32,10 +32,28 @@
                 {{ .Summary | markdownify }}
             </span>
 
-            <a href="{{ .RelPermalink }}" class="btn btn-primary align-self-end">
-                Details
-                <i class="fa-solid fa-caret-right" style="color: #ffffff;"></i>
-            </a>
+
+            <div class="d-flex flex-row justify-content-between">
+                <div>
+                    {{ if .Params.github }}
+                    <a href="{{ .Params.github }}" class="me-2 text-decoration-none">
+                        <i class="fa-brands fa-github fa-2xl text-body-emphasis"></i>
+                    </a>
+                    {{ end }}
+                    
+                    {{ if .Params.website }}
+                    <a href="{{ .Params.website }}" class="text-decoration-none">
+                        <i class="fa-solid fa-globe fa-2xl text-body-emphasis"></i>
+                    </a>
+                    {{ end }}
+                </div>
+
+                <a href="{{ .RelPermalink }}" class="btn btn-primary align-self-end">
+                    Details
+                    <i class="fa-solid fa-caret-right" style="color: #ffffff;"></i>
+                </a>
+            </div>
+
         </div>
     </div>
 </div>
