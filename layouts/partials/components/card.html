@@ -29,8 +29,22 @@
         </div>
     </div>
         
-    <div class="card-footer">
-        <a href="{{ .RelPermalink }}" class="btn btn-primary float-end">
+    <div class="card-footer d-flex flex-row justify-content-between" >
+        <div class="mt-2">
+            {{ if .Params.github }}
+            <a href="{{ .Params.github }}" class="me-2 text-decoration-none">
+                <i class="fa-brands fa-github fa-2xl text-secondary-emphasis"></i>
+            </a>
+            {{ end }}
+
+            {{ if .Params.website }}
+            <a href="{{ .Params.website }}" class="text-decoration-none">
+                <i class="fa-solid fa-globe fa-2xl text-secondary-emphasis"></i>
+            </a>
+            {{ end }}
+        </div>
+
+        <a href="{{ .RelPermalink }}" class="btn btn-primary">
             Details
             <i class="fa-solid fa-caret-right" style="color: #ffffff;"></i>
         </a>

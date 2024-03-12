@@ -1,7 +1,7 @@
 {{ define "meta_tags" }}
 
     <meta name="description" content="Fırat Batar's '{{ .Title }}' project">
-    <meta name="keywords" content="Fırat Batar, {{ .Params.keywords }}">
+    <meta name="keywords" content="Fırat Batar, {{ range .Params.keywords }}{{ . }}, {{ end }}">
     {{/*  Meta tags for Open Graph  */}}
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:type" content="website">
@@ -25,7 +25,7 @@
 <div class="container">
     <h1 class="text-center">{{ .Title }}</h1>
 
-    {{/* Get the date of the project */}}
+    <!-- Get the date of the project -->
     {{ $dateTime := .PublishDate.Format "2006-01-02" }}
     {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
     <i class="fa-regular fa-calendar"></i>
@@ -58,7 +58,22 @@
 
     </span>
 
-    <br>
+    <!-- GitHub and Website Links -->
+    <div class="float-end">
+        {{ if .Params.github }}
+        <a href="{{ .Params.github }}" class="me-2 text-decoration-none">
+            <i class="fa-brands fa-github fa-2xl text-body-emphasis"></i>
+        </a>
+        {{ end }}
+
+        {{ if .Params.website }}
+        <a href="{{ .Params.website }}" class="text-decoration-none">
+            <i class="fa-solid fa-globe fa-2xl text-body-emphasis"></i>
+        </a>
+        {{ end }}
+    </div>
+
+    <br/>
 
     {{ range .Params.tags }}
     <span class="badge rounded-pill bg-secondary mt-2">{{ . }}</span>
