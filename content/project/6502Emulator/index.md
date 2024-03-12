@@ -3,8 +3,10 @@ title: "6502Emulator"
 status: "inprogress" # active, complete, inprogress
 date: 2024-03-12T17:44:20+03:00
 coverImage: mosChip.jpg
+github: "https://github.com/firatbatar/6502Emulator"
+website: ""
 tags: [MOS6502, Emulator, C]
-keywords: []
+keywords: [C/C++, 6502, MOS6502, Emulator, 6502 Emulator]
 summary: |
     A simple emulator for the MOS 6502 microprocessor written in C.
 ---

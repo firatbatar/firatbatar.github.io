@@ -3,6 +3,8 @@ title: "p5.js Challenges"
 status: "active"
 date: 2023-12-12T22:00:31+03:00
 coverImage: images/placeholder600x400.png
+github: "https://github.com/firatbatar/p5-challenges"
+website: "https://firatbatar.com/p5-challenges/"
 tags: [JavaScript, p5.js, Coding Challenge]
 keywords: [JavaScript, p5.js, Coding Challenge, Fırat Batar]
 summary: |

@@ -3,6 +3,8 @@ title: "My Reddit Data"
 status: "complete"
 date: 2024-01-15T13:43:33+03:00
 coverImage: projectPageImage.png
+github: "https://github.com/firatbatar/reddit-usage-analysis"
+website: "https://firatbatar.com/reddit-usage-analysis/"
 tags: [Data Science, Python, Reddit, PRAW, Altair, Pandas, Jupyter Notebook]
 summary: A data science project that analyzes my Reddit usage data.
 ---

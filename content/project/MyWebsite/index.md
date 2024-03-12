@@ -3,6 +3,8 @@ title: "Personal Website"
 status: "active"
 date: 2023-11-26T14:06:59+03:00
 coverImage: myWebsiteImage.png
+github: "https://github.com/firatbatar/firatbatar.github.io"
+website: "https://firatbatar.com/"
 tags: [Web Development, Hugo, Bootstrap, GitHub Pages]
 keywords: [Web Development, Hugo, Bootstrap, GitHub Pages, Personal Website, Fırat Batar, Fırat Batar's Personal Website]
 summary: Simple static personal website built with Hugo and hosted on GitHub Pages.
