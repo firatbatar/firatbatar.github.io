@@ -27,7 +27,13 @@
         </div>
 
         <div class="col d-flex flex-column justify-content-between my-3" style="max-height: 100%;">
-            <h2>{{ .Title }}</h2>
+            <div>
+                <h2>{{ .Title }}</h2>
+                {{ range .Params.tags }}
+                <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+                {{ end }}
+            </div>
+
             <span>
                 {{ .Summary | markdownify }}
             </span>
@@ -40,7 +46,7 @@
                         <i class="fa-brands fa-github fa-2xl text-body-emphasis"></i>
                     </a>
                     {{ end }}
-                    
+
                     {{ if .Params.website }}
                     <a href="{{ .Params.website }}" class="text-decoration-none">
                         <i class="fa-solid fa-globe fa-2xl text-body-emphasis"></i>
