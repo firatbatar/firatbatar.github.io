@@ -16,18 +16,20 @@
 <div class="container">
     <h1 class="text-center mt-5">{{ .Title }}</h1>
 
-    <!-- Get the date of the project -->
+    <!-- Tags of the post -->
+    <div>
+        {{ range .Params.tags }}
+        <span class="badge rounded-pill bg-secondary mb-3 mt-2">{{ . }}</span>
+        {{ end }}
+    </div>
+    
+    <!-- Get the date of the post -->
     {{ $dateTime := .PublishDate.Format "2006-01-02" }}
     {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
     <p>
         <i class="fa-regular fa-calendar"></i>
         <i>Published on: <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></i>
     </p>
-    <div>
-        {{ range .Params.tags }}
-        <span class="badge rounded-pill bg-secondary mt-2">{{ . }}</span>
-        {{ end }}
-    </div>
 
     <div class="my-5 pb-5">
         {{ .Content }}
