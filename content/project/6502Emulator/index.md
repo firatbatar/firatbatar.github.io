@@ -1,5 +1,5 @@
 ---
-title: "6502Emulator"
+title: "MOS6502 Emulator in C"
 status: "inprogress" # active, complete, inprogress
 date: 2024-03-12T17:44:20+03:00
 coverImage: mosChip.jpg
