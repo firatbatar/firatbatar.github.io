@@ -8,6 +8,7 @@ disableKinds = ['taxonomy', 'term']
     github = 'https://github.com/firatbatar'
     linkedin = 'https://www.linkedin.com/in/firatbatar/'
     placeholderImage = 'images/placeholder600x400.png'
+    placeholderImagePerson = 'images/placeholderPerson.png'
     
     [params.status]
         complete = "This means that I've developed this project into a state that I'm happy with and I will not continue to work on it in the future (most probably!)."
