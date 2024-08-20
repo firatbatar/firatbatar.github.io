@@ -119,3 +119,20 @@
         display: block;
     }
 }
+
+/* On Hover Utils */
+.on-hover .appear-on-hover {
+    display: none;
+}
+
+.on-hover:hover .appear-on-hover-block {
+    display: block !important;
+}
+
+.appear-on-hover .on-hover-underline {
+    text-decoration: none;
+}
+
+.appear-on-hover .on-hover-underline:hover {
+    text-decoration: underline !important;
+}
