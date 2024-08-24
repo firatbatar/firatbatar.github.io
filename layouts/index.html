@@ -26,6 +26,7 @@
 
 {{ $about := .Site.GetPage "about/" }}
 {{ $projects := .Site.GetPage "project/" }}
+{{ $blogPosts := .Site.GetPage "blog/" }}
 
 {{ if $about }}
 {{ partial "sections/about.html" $about }}
@@ -33,6 +34,10 @@
 
 {{ if $projects }}
 {{ partial "sections/projects.html" $projects }}
+{{ end }}
+
+{{ if $blogPosts }}
+{{ partial "sections/blogPosts.html" $blogPosts }}
 {{ end }}
 
 {{ end }}
