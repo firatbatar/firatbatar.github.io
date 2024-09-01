@@ -1,7 +1,7 @@
 <article class="card mb-5 mx-2" style="max-width: 30vw;">
     {{ $title := partial "util/limitString.html" (dict "str" .Title "limit" 60) }}
     {{ $summary := partial "util/limitString.html" (dict "str" .Summary "limit" 45) }}
-    {{ $image := partial "util/getImage.html" . }}
+    {{ $image := partial "util/getCoverImage.html" . }}
     <div class="post-card-img-container position-relative on-hover">
         <a href="{{ .RelPermalink }}" class="text-decoration-none text-light">
             <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" class="card-img-top img-fluid" style="object-fit: contain;">

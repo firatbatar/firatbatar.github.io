@@ -19,7 +19,7 @@
 <div class="container mb-4" style="height: fit-content;">
     <div class="p-0 container-fluid bg-body-tertiary rounded-3 row h-100">
         <div class="col-lg-4 ps-0">
-            {{ $image := partial "util/getImage.html" . }}
+            {{ $image := partial "util/getCoverImage.html" . }}
             <img src="{{ $image.RelPermalink }}" alt="{{ lower .Title }}-img" class="w-100 h-auto">
         </div>
 
