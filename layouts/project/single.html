@@ -14,10 +14,7 @@
 {{ define "main" }}
 
 <div class="text-center mb-4 bg-dark-subtle">
-    {{ $image := .Resources.GetMatch .Params.coverImage }}
-    {{ if not $image }}
-    {{ $image = resources.Get .Site.Params.placeholderImage }}
-    {{ end }}
+    {{ $image := partial "util/getImage.html" . }}
     
     <img src="{{ $image.RelPermalink }}" alt="{{ lower .Title }}-img" style="max-width: 30vw; height: auto;">
 </div>
