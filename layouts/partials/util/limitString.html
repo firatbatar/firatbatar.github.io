@@ -1,0 +1,10 @@
+{{ $str := .str | default "" }}
+{{ $limit := .limit | default 10 }}
+
+{{ if gt (len $str) $limit }}
+    {{ $str = substr $str 0 $limit }}
+    {{ $str = print $str "..." }}
+{{ end }}
+
+<!-- Return the result -->
+{{ return $str }}

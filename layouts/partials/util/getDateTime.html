@@ -1,0 +1,7 @@
+<!-- Get the date of the project -->
+{{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+<span>
+    <i class="fa-regular fa-calendar"></i>
+    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+</span>
