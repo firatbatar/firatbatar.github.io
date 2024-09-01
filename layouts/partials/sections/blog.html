@@ -7,12 +7,10 @@
                     <div class="bg-body-tertiary row">
                         <div class="d-flex flex-column justify-content-between my-3" style="max-height: 100%;">
                             <h2>{{ .Title }}</h2>
-                            {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-                            {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-                            <p class="mt-1 mb-1">
-                                <i class="fa-regular fa-calendar"></i>
-                                <i>Published on: <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></i>
-                            </p>
+                            
+                            <!-- Get the date of the post -->
+                            {{ partial "util/getDateTime.html" . }}
+
                             <div class="mb-2">
                                 {{ range .Params.tags }}
                                 <span class="badge rounded-pill bg-secondary">{{ . }}</span>

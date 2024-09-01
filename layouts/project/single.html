@@ -26,10 +26,7 @@
     <h1 class="text-center">{{ .Title }}</h1>
 
     <!-- Get the date of the project -->
-    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-    <i class="fa-regular fa-calendar"></i>
-    <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+    {{ partial "util/getDateTime.html" . }}
 
     <span class="ms-3">
         {{ if eq .Params.status "complete" }}
