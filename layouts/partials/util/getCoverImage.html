@@ -1,0 +1,7 @@
+{{ $image := .Resources.GetMatch .Params.coverImage }}
+
+{{ if not $image }}
+    {{ $image = resources.Get .Site.Params.placeholderImage }}
+{{ end }}
+
+{{ return $image }}

@@ -1,39 +1,57 @@
 {{ define "meta_tags" }}
 
-<meta name="description" content="Fırat Batar's '{{ .Title }}' blog post">
-<meta name="keywords" content="Fırat Batar, {{ range .Params.keywords }}{{ . }}, {{ end }}">
-<!-- Meta tags for Open Graph -->
-<meta property="og:title" content="{{ .Title }}">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://firatbatar.com{{ .RelPermalink }}">
-<meta property="og:site_name" content="firatbatar" />
-<meta property="og:description" content="Fırat Batar's {{ .Title }} blog post.">
+    <meta name="description" content="Fırat Batar's blog post {{ .Title }}'">
+    <meta name="keywords" content="Fırat Batar, {{ range .Params.keywords }}{{ . }}, {{ end }}">
+    {{/*  Meta tags for Open Graph  */}}
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://firatbatar.com/blog">
+    <meta property="og:site_name" content="firatbatar"/>
+    <meta property="og:description" content="Fırat Batar's blog post '{{ .Title }}'.">
 
 {{ end }}
 
 {{ define "main" }}
 
 <div class="container">
-    <h1 class="text-center mt-5">{{ .Title }}</h1>
+    <h1 class="border-bottom border-dark mt-5 mb-2 pb-1 text-center">{{ .Title }}</h1>
 
-    <!-- Tags of the post -->
-    <div>
-        {{ range .Params.tags }}
-        <span class="badge rounded-pill bg-secondary mb-3 mt-2">{{ . }}</span>
-        {{ end }}
+    <div class="my-3 ms-1 d-flex align-items-center">
+        <div>
+            <!-- Get the date of the post -->
+            {{ partial "util/getDateTime.html" . }}
+        </div>
+        
+        <div class="d-flex flex-wrap align-items-center ms-3" style="max-width: 10rem;">
+            <!-- Get the tags of the post -->
+            {{ range .Params.tags }}
+            <span class="badge rounded-pill bg-secondary me-1 mb-1">{{ . }}</span>
+            {{ end }}
+        </div>
     </div>
     
-    <!-- Get the date of the post -->
-    {{ $dateTime := .PublishDate.Format "2006-01-02" }}
-    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-    <p>
-        <i class="fa-regular fa-calendar"></i>
-        <i>Published on: <time datetime="{{ $dateTime }}">{{ .PublishDate.Format $dateFormat }}</time></i>
-    </p>
+    <div class="px-0 row align-items-center ms-1 my-1">
+        <!-- Get author name and image -->
+        {{ $image := .Resources.GetMatch .Params.author.image }}
+        {{ if not $image }}
+        {{ $image = resources.Get .Site.Params.placeholderImagePerson }}
+        {{ end }}
+        <img class="px-0 me-2 col rounded-circle ratio ratio-1x1" style="max-height: 3.5rem; max-width: 3.5rem;" src="{{ $image.RelPermalink }}" alt="{{ .Params.author.image }}" />
+        <span class="px-0 col-6">by <a class="fst-italic text-decoration-underline text-body-tertiary" href="/about">{{ .Params.author.name }}</a></span>
+    </div>
+    
+    <br/>
 
-    <div class="my-5 pb-5">
+    <div class="mt-2 mb-5 pb-5">
         {{ .Content }}
     </div>
+
+    <script>
+        // Activate Bootstrap tooltips
+        $(document).ready(function(){
+            $('[data-bs-toggle="tooltip"]').tooltip();
+        });
+    </script>
 </div>
 
 {{ end }}
