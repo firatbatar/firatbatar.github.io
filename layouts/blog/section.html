@@ -16,25 +16,10 @@
 <h1 class="text-center my-5">{{ .Title }}</h1>
 
 <div class="container mb-4" style="height: fit-content;">
-    <div class="p-0 d-flex flex-wrap">
+    <div class="d-flex flex-wrap">
         {{ range .Pages }}
-        <div class="on-hover card ms-0 me-3 mb-5" style="max-width: 40%;">
-            {{ $image := .Resources.GetMatch .Params.coverImage }}
-            {{ if not $image }}
-            {{ $image = resources.Get .Site.Params.placeholderImage }}
-            {{ end }}
-            <img src="{{ $image.RelPermalink }}" alt="{{ lower .Title }}-img" class="card-img-top">
-            <div class="card-img-overlay appear-on-hover appear-on-hover-block p-0 top-50">
-                <div class="card-body">
-                    <a href="{{ .RelPermalink }}" class="text-decoration-none text-body on-hover-underline">
-                        <h5 class="card-title">{{ .Title }}</h5>
-                        <p class="card-text text-truncate">{{ .Summary | markdownify }}</p>
-                    </a>
-                </div>
-            </div>
-        </div>
+            {{ partial "components/blogPostCard.html" . }}
         {{ end }}
     </div>
 </div>
-
 {{ end }}

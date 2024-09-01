@@ -1,0 +1,20 @@
+<article class="card mb-5 mx-2" style="max-width: 30vw;">
+    {{ $title := partial "util/limitString.html" (dict "str" .Title "limit" 60) }}
+    {{ $summary := partial "util/limitString.html" (dict "str" .Summary "limit" 45) }}
+    {{ $image := partial "util/getImage.html" . }}
+    <div class="post-card-img-container position-relative on-hover">
+        <a href="{{ .RelPermalink }}" class="text-decoration-none text-light">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" class="card-img-top img-fluid" style="object-fit: contain;">
+        
+            <div class="card-img-overlay appear-on-hover appear-on-hover-flex d-flex align-items-center justify-content-center">
+                <h3 class="text-light on-hover-underline">...</h3>
+            </div>
+        </a>
+    </div>
+   
+    <div class="card-body">
+        <h6 class="card-subtitle text-body-secondary mb-1">{{ partial "util/getDateTime.html" . }}</h6>
+        <h5 class="card-title">{{ $title }}</h5>
+        <p class="card-text">{{ $summary }}</p>
+    </div>
+</article>
