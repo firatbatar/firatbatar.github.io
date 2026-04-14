@@ -1,7 +1,7 @@
 <div class="card h-100">
     {{ $image := partial "util/getCoverImage.html" . }}
     <div class="position-relative">
-        <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="{{ lower .Title }}-img">
+        <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="Cover image for {{ .Title }}">
         <div class="card-status">
             {{ if eq .Params.status "complete" }}
             <span class="badge text-bg-success">Complete</span>

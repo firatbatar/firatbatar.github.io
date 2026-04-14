@@ -14,7 +14,7 @@
 
 <div class="project-cover">
     {{ $image := partial "util/getCoverImage.html" . }}
-    <img src="{{ $image.RelPermalink }}" alt="{{ lower .Title }}-img">
+    <img src="{{ $image.RelPermalink }}" alt="Cover image for {{ .Title }}">
 </div>
 
 <div class="container">
@@ -52,12 +52,6 @@
     <div class="post-body">
         {{ .Content }}
     </div>
-
-    <script>
-        $(document).ready(function(){
-            $('[data-bs-toggle="tooltip"]').tooltip();
-        });
-    </script>
 </div>
 
 {{ end }}

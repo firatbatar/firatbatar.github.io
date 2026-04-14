@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg py-2">
-    <div class="container-fluid px-4" id="navbarNav">
+    <div class="container-fluid px-4">
         <a href="/" class="brand-link">{{ .Site.Title }}</a>
         <ul class="navbar-nav ms-auto d-flex flex-row align-items-center gap-1">
             {{ with site.Menus.main }}
@@ -15,7 +15,7 @@
             {{ end }}
 
             <li class="nav-item ms-2">
-                <button id="color-mode-toggle-btn" aria-label="Toggle color mode">
+                <button type="button" id="color-mode-toggle-btn" aria-label="Toggle color mode">
                     <i id="dark-mode-toggle-icon" class="fa-solid fa-moon"></i>
                     <i id="light-mode-toggle-icon" class="fa-solid fa-sun"></i>
                 </button>
