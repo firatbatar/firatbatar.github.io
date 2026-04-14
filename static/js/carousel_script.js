@@ -1,32 +1,43 @@
-let carouselWidth = $(".carousel-inner")[0].scrollWidth;
-let cardWidth = $(".carousel-item").width();
-let scrollPosition = 0;
-let multipleCardCarousel = document.querySelector("#projectsCarousel");
+(function () {
+    const carouselEl = document.querySelector("#projectsCarousel");
+    if (!carouselEl) return;
 
-// Make the first card active
-let firstCard = $(".carousel-item")[0];
-$(firstCard).addClass("active");
+    const inner = carouselEl.querySelector(".carousel-inner");
+    const items = carouselEl.querySelectorAll(".carousel-item");
+    if (!inner || items.length === 0) return;
 
-$(".carousel-control-next").on("click", function () {
-    if (scrollPosition < carouselWidth - cardWidth * 4) {
-        //check if you can go any further
-        scrollPosition += cardWidth; //update scroll position
-        $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600); //scroll left
-    }
-});
+    items[0].classList.add("active");
 
-$(".carousel-control-prev").on("click", function () {
-    if (scrollPosition > 0) {
-        scrollPosition -= cardWidth;
-        $(".carousel-inner").animate({ scrollLeft: scrollPosition }, 600);
-    }
-});
+    const getCardWidth = () => {
+        const firstItem = inner.querySelector(".carousel-item");
+        return firstItem ? firstItem.getBoundingClientRect().width : 0;
+    };
 
-if (window.matchMedia("(min-width: 1100px)").matches) {
-    var carousel = new bootstrap.Carousel(multipleCardCarousel, {
-        interval: false,
-        wrap: false,
+    let scrollPosition = 0;
+
+    const next = carouselEl.querySelector(".carousel-control-next");
+    const prev = carouselEl.querySelector(".carousel-control-prev");
+
+    next && next.addEventListener("click", function () {
+        const cardWidth = getCardWidth();
+        const max = inner.scrollWidth - inner.clientWidth;
+        if (scrollPosition < max) {
+            scrollPosition = Math.min(scrollPosition + cardWidth, max);
+            $(inner).animate({ scrollLeft: scrollPosition }, 500);
+        }
     });
-} else {
-    $(multipleCardCarousel).addClass("slide");
-}
+
+    prev && prev.addEventListener("click", function () {
+        const cardWidth = getCardWidth();
+        if (scrollPosition > 0) {
+            scrollPosition = Math.max(scrollPosition - cardWidth, 0);
+            $(inner).animate({ scrollLeft: scrollPosition }, 500);
+        }
+    });
+
+    if (window.matchMedia("(min-width: 1100px)").matches) {
+        new bootstrap.Carousel(carouselEl, { interval: false, wrap: false });
+    } else {
+        carouselEl.classList.add("slide");
+    }
+})();

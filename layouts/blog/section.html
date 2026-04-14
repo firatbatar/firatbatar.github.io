@@ -2,7 +2,6 @@
 
 <meta name="description" content="Fırat Batar's Blog">
 <meta name="keywords" content="Fırat Batar, blog">
-{{/* Meta tags for Open Graph */}}
 <meta property="og:title" content="Blog">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://firatbatar.com/blog">
@@ -13,13 +12,18 @@
 
 {{ define "main" }}
 
-<h1 class="text-center my-5">{{ .Title }}</h1>
+<div class="container">
+    <div class="post-header">
+        <span class="eyebrow mb-2">Writing</span>
+        <h1>{{ .Title }}</h1>
+        <p style="color: var(--text-muted); max-width: 540px; margin: 1rem auto 0;">Notes, tutorials, and the occasional rabbit hole.</p>
+    </div>
 
-<div class="container mb-4" style="height: fit-content;">
-    <div class="d-flex flex-wrap">
+    <div class="blog-grid mb-5 pb-5">
         {{ range .Pages }}
             {{ partial "components/blogPostCard.html" . }}
         {{ end }}
     </div>
 </div>
+
 {{ end }}

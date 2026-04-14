@@ -1,30 +1,29 @@
-<nav class="navbar navbar-expand-lg text-light py-3">
-    <div class="container-fluid" id="navbarNav">
-        <a href="/" class="nav-item nav-link fs-3 fw-bold ms-4">{{ .Site.Title }}</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
-            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-            <i class="fa-solid fa-bars text-dark-subtle"></i>
+<nav class="navbar navbar-expand-lg py-2">
+    <div class="container-fluid px-3">
+        <a href="/" class="brand-link">{{ .Site.Title }}</a>
+        <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars"></i>
         </button>
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-            aria-labelledby="offcanvasDarkNavbarLabel" style="width: 300px;">
-            <div class="offcanvas-header">
-                <button id="color-mode-toggle-btn-sb" class="nav-item btn btn-link nav-link text-light">
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header border-bottom" style="border-color: var(--border) !important;">
+                <h5 class="offcanvas-title mb-0" id="offcanvasNavbarLabel">{{ .Site.Title }}</h5>
+                <button type="button" id="color-mode-toggle-btn-sb" class="ms-auto me-2" aria-label="Toggle color mode">
                     <i id="dark-mode-toggle-icon-sb" class="fa-solid fa-moon"></i>
                     <i id="light-mode-toggle-icon-sb" class="fa-solid fa-sun"></i>
                 </button>
-                <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="offcanvas"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <ul class="navbar-nav justify-content-end flex-grow-1">
                     {{ with site.Menus.main }}
                     {{ range . }}
                     <li class="nav-item">
                         {{ if $.IsMenuCurrent .Menu . }}
-                        <a class="nav-link active text-dark-subtle" aria-current="page" href="{{ .URL }}">{{ .Name
-                            }}</a>
+                        <a class="nav-link active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
                         {{ else }}
-                        <a class="nav-link text-light" href="{{ .URL }}">{{ .Name }}</a>
+                        <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                         {{ end }}
                     </li>
                     {{ end }}

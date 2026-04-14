@@ -1,20 +1,28 @@
-<article class="card mb-5 mx-2" style="max-width: 30vw;">
+<article class="post-card">
     {{ $title := partial "util/limitString.html" (dict "str" .Title "limit" 60) }}
-    {{ $summary := partial "util/limitString.html" (dict "str" .Summary "limit" 45) }}
+    {{ $summary := partial "util/limitString.html" (dict "str" .Summary "limit" 90) }}
     {{ $image := partial "util/getCoverImage.html" . }}
-    <div class="post-card-img-container position-relative on-hover">
-        <a href="{{ .RelPermalink }}" class="text-decoration-none text-light">
-            <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" class="card-img-top img-fluid" style="object-fit: contain;">
-        
-            <div class="card-img-overlay appear-on-hover appear-on-hover-flex d-flex align-items-center justify-content-center">
-                <h3 class="text-light on-hover-underline">...</h3>
+    <div class="post-card-img-container on-hover">
+        <a href="{{ .RelPermalink }}" aria-label="{{ $title }}">
+            <img src="{{ $image.RelPermalink }}" alt="{{ $title }}" class="img-fluid">
+            <div class="card-img-overlay">
+                <h3>Read post <i class="fa-solid fa-arrow-right ms-1"></i></h3>
             </div>
         </a>
     </div>
-   
+
     <div class="card-body">
-        <h6 class="card-subtitle text-body-secondary mb-1">{{ partial "util/getDateTime.html" . }}</h6>
-        <h5 class="card-title">{{ $title }}</h5>
-        <p class="card-text">{{ $summary }}</p>
+        <h6 class="card-subtitle">
+            {{ partial "util/getDateTime.html" . }}
+        </h6>
+        <h5 class="card-title">
+            <a href="{{ .RelPermalink }}" style="color: inherit;">{{ $title }}</a>
+        </h5>
+        <p class="card-text" style="color: var(--text-muted); font-size: 0.95rem;">{{ $summary }}</p>
+        <div class="mt-3">
+            {{ range .Params.tags }}
+            <span class="badge rounded-pill bg-secondary">{{ . }}</span>
+            {{ end }}
+        </div>
     </div>
 </article>

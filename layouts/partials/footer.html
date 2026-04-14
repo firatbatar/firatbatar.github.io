@@ -1,25 +1,22 @@
-<footer class="d-flex flex-column justify-content-center align-items-center bg-dark">
-    {{/*  Contact links  */}}
-    <div class="contact-links my-4">
-        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-github fa-2xl text-dark-subtle"></i>
+<footer class="d-flex flex-column justify-content-center align-items-center">
+    <div class="contact-links mb-3">
+        <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
         </a>
-        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-linkedin fa-2xl text-dark-subtle" style="color: #0077b5;"></i>
+        <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
         </a>
     </div>
 
-    {{/*  Made with Hugo  */}}
-    <div class="made-with-hugo my-3">
-        <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-dark-subtle">
+    <div class="made-with-hugo mb-2">
+        <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">
             {{ $hugo_icon := resources.Get "images/hugo-icon.png" }}
             <img src="{{ $hugo_icon.RelPermalink }}" alt="Hugo Logo">
-            Made with Hugo
+            <span>Made with Hugo</span>
         </a>
     </div>
 
-    {{/*  Copyright  */}}
-    <div class="copy-rights my-1">
-        <p class="text-dark-subtle">&copy; {{ now.Format "2006" }} Fırat Batar</p>
+    <div class="copy-rights">
+        <p>&copy; {{ now.Format "2006" }} Fırat Batar</p>
     </div>
 </footer>

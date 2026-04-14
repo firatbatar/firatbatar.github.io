@@ -2,22 +2,25 @@
 
     <meta name="description" content="About Fırat Batar">
     <meta name="keywords" content="Fırat Batar, about">
-    {{/*  Meta tags for Open Graph  */}}
     <meta property="og:title" content="About Me">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://firatbatar.com/about">
     <meta property="og:site_name" content="firatbatar"/>
     <meta property="og:description" content="About Fırat Batar.">
-    
+
 {{ end }}
 
 {{ define "main" }}
 
 <div class="container">
-    <h1 class="text-center my-5">{{ .Title }}</h1>
-    <div style="margin-bottom: 15rem;">
+    <div class="post-header">
+        <span class="eyebrow mb-2">Hello</span>
+        <h1>{{ .Title }}</h1>
+    </div>
+
+    <div class="about-content mb-5" style="max-width: 840px; margin-left: auto; margin-right: auto;">
         {{ .Content }}
     </div>
 </div>
-    
+
 {{ end }}

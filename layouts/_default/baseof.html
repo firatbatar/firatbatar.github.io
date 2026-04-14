@@ -14,6 +14,11 @@
     {{ $bootstrap_css := "bootstrap-5/css/bootstrap.min.css" | relURL }}
     <link rel="stylesheet" href="{{ $bootstrap_css }}">
 
+    {{/*  Fonts: Inter + JetBrains Mono  */}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+
     {{/*  Add custom css  */}}
     {{ $custom_css := "css/style.css" | relURL }}
     <link rel="stylesheet" href="{{ $custom_css }}">
@@ -31,7 +36,7 @@
     
     <title>{{ .Title }}</title>
 </head>
-<body class="bg-body-secondary">
+<body>
     {{ partial "header.html" . }}
 
     <div class="return_to_top" title="Return to Top">
@@ -46,7 +51,7 @@
 
     {{/*  Add custom js  */}}
     {{ $color_mode_script := "js/colormode_script.js" | relURL }}
-    <script src="{{ $color_mode_script }}"></script>   
+    <script src="{{ $color_mode_script }}"></script>
     {{ $carousel_script := "js/carousel_script.js" | relURL }}
     <script src="{{ $carousel_script }}"></script>
     {{ $return_to_top_script := "js/return_to_top_script.js" | relURL }}
