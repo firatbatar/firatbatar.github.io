@@ -56,4 +56,13 @@ I've also added a footer with links to my GitHub and LinkedIn profiles and a lin
 
 Using Bootstrap's color mode classes I've added a dark mode toggle button to the navbar.  
 
-Finally I've fixed some issues with responsiveness and pushed the website to GitHub and hosted it.  
+Finally I've fixed some issues with responsiveness and pushed the website to GitHub and hosted it.
+
+<br/>
+
+### A refresh with Claude Code
+As I mentioned, design and CSS are not really my thing. After living with the first version for a while, I decided to give the site a fresh, more modern look — and I leaned on [Claude Code](https://www.anthropic.com/claude-code) to do the heavy CSS lifting.
+
+I kept all the content, page structure, and Hugo layouts intact, and used Claude Code to redesign the stylesheet from scratch: a new color palette (emerald → teal → cyan gradient accent), a proper design-token system via CSS custom properties, refreshed typography with [Inter](https://rsms.me/inter/) and [JetBrains Mono](https://www.jetbrains.com/lp/mono/), consistent spacing and radii, and polished dark/light themes that switch via `[data-bs-theme]`.
+
+Working with an AI pair was genuinely useful here. I could describe what I wanted in plain English, and iterate quickly on small, reviewable commits rather than wrestling with CSS myself. It turned the parts of web development I enjoy least into a conversation.  
