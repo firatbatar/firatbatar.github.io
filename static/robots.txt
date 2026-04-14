@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://firatbatar.com/sitemap.xml
+Sitemap: https://firatbatar.com/p5-challenges/sitemap.xml
+Sitemap: https://firatbatar.com/reddit-usage-analysis/sitemap.xml

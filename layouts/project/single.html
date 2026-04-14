@@ -1,12 +1,13 @@
 {{ define "meta_tags" }}
 
-    <meta name="description" content="Fırat Batar's '{{ .Title }}' project">
-    <meta name="keywords" content="Fırat Batar, {{ range .Params.keywords }}{{ . }}, {{ end }}">
+    {{ $desc := cond (ne (string .Description) "") .Description (.Summary | plainify | truncate 160) }}
+    <meta name="description" content="{{ $desc }}">
+    <meta name="keywords" content="Fırat Batar{{ with .Params.keywords }}, {{ delimit . ", " }}{{ end }}">
     <meta property="og:title" content="{{ .Title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://firatbatar.com{{ .RelPermalink }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="firatbatar"/>
-    <meta property="og:description" content="Fırat Batar's {{ .Title }} project.">
+    <meta property="og:description" content="{{ $desc }}">
 
 {{ end }}
 
