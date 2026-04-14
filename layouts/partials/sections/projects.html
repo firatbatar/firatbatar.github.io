@@ -1,23 +1,28 @@
-<section id="projects" class="my-5 py-5 bg-body-secondary">
+<section id="projects">
     <div class="container">
-        <h1 class="text-end mb-5 me-5">{{ .Title }}</h1>
-        <div id="projectsCarousel" class="carousel">
-            <div class="carousel-inner">
-                {{ range .Pages }}
-                <div class="carousel-item">
+        <div class="section-heading">
+            <div>
+                <span class="eyebrow">Work</span>
+                <h2>{{ .Title }}</h2>
+            </div>
+            <div class="section-divider"></div>
+            <a href="{{ .RelPermalink }}" class="btn btn-ghost d-none d-md-inline-flex">
+                View all <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
+        </div>
+
+        <div class="project-grid">
+            {{ range first 6 .Pages }}
+                <div class="position-relative">
                     {{ partial "components/card.html" . }}
                 </div>
-                {{ end }}
-            </div>
-            
-            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
-                <i class="fa-solid fa-angle-left text-dark"></i>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
-                <i class="fa-solid fa-angle-right text-dark"></i>
-                <span class="visually-hidden">Next</span>
-            </button>
+            {{ end }}
+        </div>
+
+        <div class="text-center mt-4 d-md-none">
+            <a href="{{ .RelPermalink }}" class="btn btn-ghost">
+                View all projects <i class="fa-solid fa-arrow-right ms-1"></i>
+            </a>
         </div>
     </div>
 </section>
