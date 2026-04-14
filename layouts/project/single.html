@@ -24,27 +24,9 @@
         <div class="post-meta">
             {{ partial "util/getDateTime.html" . }}
 
-            {{ if eq .Params.status "complete" }}
-                <span class="badge text-bg-success">Complete</span>
-                <button class="bg-transparent border-0 p-0" style="color: var(--text-muted);"
-                    data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.complete }}">
-                    <i class="fa-solid fa-circle-question"></i>
-                </button>
-            {{ end }}
-            {{ if eq .Params.status "active" }}
-                <span class="badge text-bg-info">Active</span>
-                <button class="bg-transparent border-0 p-0" style="color: var(--text-muted);"
-                    data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.active }}">
-                    <i class="fa-solid fa-circle-question"></i>
-                </button>
-            {{ end }}
-            {{ if eq .Params.status "inprogress" }}
-                <span class="badge text-bg-warning">In-progress</span>
-                <button class="bg-transparent border-0 p-0" style="color: var(--text-muted);"
-                    data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="{{ .Site.Params.status.inprogress }}">
-                    <i class="fa-solid fa-circle-question"></i>
-                </button>
-            {{ end }}
+            {{ if eq .Params.status "complete" }}<span class="badge text-bg-success">Complete</span>{{ end }}
+            {{ if eq .Params.status "active" }}<span class="badge text-bg-info">Active</span>{{ end }}
+            {{ if eq .Params.status "inprogress" }}<span class="badge text-bg-warning">In-progress</span>{{ end }}
         </div>
 
         <div class="d-flex justify-content-center gap-2 mb-3">
