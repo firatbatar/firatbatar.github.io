@@ -277,6 +277,7 @@ pre {
 }
 .offcanvas .nav-link { color: var(--text-muted) !important; padding: 0.75rem 1rem !important; }
 .offcanvas .nav-link:hover, .offcanvas .nav-link.active { color: var(--text) !important; }
+[data-bs-theme="dark"] .btn-close { filter: invert(1) grayscale(1) brightness(1.5); }
 
 /* ============================================================
    Buttons
