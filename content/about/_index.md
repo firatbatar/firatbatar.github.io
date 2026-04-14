@@ -1,22 +1,20 @@
 ---
 title: "About Me"
-summary: Welcome to my digital space! I'm Fırat, a passionate explorer in the realms of computer science and mathematics. Currently pursuing a major in computer science and a minor in mathematics, my academic endeavors fuel my fascination with the intricacies of problem-solving.
+summary: I'm Fırat — a computer science student with a minor in mathematics, drawn to the places where careful reasoning meets practical engineering.
 ---
 
-Welcome to my digital space! I'm Fırat, a passionate explorer in the realms of computer science and mathematics. Currently pursuing a major in computer science and a minor in mathematics, my academic endeavors fuel my fascination with the intricacies of problem-solving.
+I'm Fırat, a computer science student pursuing a minor in mathematics. My interests sit at the intersection of the two: I enjoy problems that reward both rigorous thinking and hands-on building.
 
-In the dynamic world of computer science, I find myself drawn to web development as a canvas for creativity and functionality. Web development is a medium that allows me to express my ideas and bring them to life quickly, efficiently, and powerfully.
+Most of my recent work has been in web development. I like it for the same reason a lot of people do — it's an immediate, expressive medium — but I've also come to appreciate how much depth hides behind the surface: performance, accessibility, architecture, and the quiet art of making something feel effortless to use.
 
-Alongside my love for coding, my foray into mathematics adds depth to my understanding. The principles of logic, abstraction, and problem-solving honed through mathematical study complement my approach to programming, enhancing my ability to architect robust solutions and algorithms.
+The mathematics side shapes how I approach engineering. Abstraction, formal reasoning, and a healthy respect for edge cases are habits I've borrowed from proofs and carried into code. I find that the best software, like the best math, tends to be simple in the end — even when getting there is anything but.
 
-This space showcases the synergy between my passion for computer science, the precision of mathematics, and the creativity of web development. Here, you'll find a collection of my projects. From web applications that marry functionality with aesthetics to projects exploring the intersection of math and coding, each endeavor represents a piece of my quest for knowledge and expression.
+This site is a collection of the things I build: web applications, smaller experiments, and occasional forays into lower-level territory like emulators and systems programming. Some projects are finished; others are ongoing. Each one is a step in learning to build thoughtfully.
 
-As I journey through the ever-evolving digital landscape, collaboration and continuous learning remain pivotal. I seek not only to master these disciplines but also to contribute meaningfully, collaborating with others who share the same zeal for innovation.
-
-Join me in exploring the endless possibilities at the nexus of computer science, mathematics, and web development, where imagination meets functionality and innovation knows no bounds.
+I'm always interested in connecting with people who care about their craft, whether that's writing cleaner code, exploring a new domain, or simply trading ideas.
 
 <br/>
 
 ## Contact
 
-You can find me on [GitHub](https://github.com/firatbatar) and [LinkedIn](https://www.linkedin.com/in/f%C4%B1rat-batar-a22695221/) or reach out via email at [firat@firatbatar.com](mailto:firat@firatbatar.com)
+You can find me on [GitHub](https://github.com/firatbatar) and [LinkedIn](https://www.linkedin.com/in/f%C4%B1rat-batar-a22695221/), or reach out by email at [firat@firatbatar.com](mailto:firat@firatbatar.com).
