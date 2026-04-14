@@ -1,22 +1,22 @@
 <div class="card h-100">
     {{ $image := partial "util/getCoverImage.html" . }}
-    <div class="position-relative">
-        <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="Cover image for {{ .Title }}">
-        <div class="card-status">
-            {{ if eq .Params.status "complete" }}
-            <span class="badge text-bg-success">Complete</span>
-            {{ end }}
-            {{ if eq .Params.status "active" }}
-            <span class="badge text-bg-info">Active</span>
-            {{ end }}
-            {{ if eq .Params.status "inprogress" }}
-            <span class="badge text-bg-warning">In-progress</span>
-            {{ end }}
-        </div>
-    </div>
+    <img src="{{ $image.RelPermalink }}" class="card-img-top" alt="Cover image for {{ .Title }}">
 
     <div class="card-body">
-        <h5 class="card-title">{{ .Title }}</h5>
+        <div class="card-title-row d-flex align-items-center justify-content-between gap-2">
+            <h5 class="card-title mb-0">{{ .Title }}</h5>
+            <div class="card-status ms-auto">
+                {{ if eq .Params.status "complete" }}
+                <span class="badge text-bg-success">Complete</span>
+                {{ end }}
+                {{ if eq .Params.status "active" }}
+                <span class="badge text-bg-info">Active</span>
+                {{ end }}
+                {{ if eq .Params.status "inprogress" }}
+                <span class="badge text-bg-warning">In-progress</span>
+                {{ end }}
+            </div>
+        </div>
         <p class="card-text">{{ .Summary | markdownify }}</p>
 
         <div class="card-tags mt-3">

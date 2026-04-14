@@ -440,7 +440,9 @@ section {
 }
 
 /* Status badges + tags */
-.card-status { position: absolute; top: 0.75rem; right: 0.75rem; z-index: 2; }
+.card-title-row { margin-bottom: 0.5rem; }
+.card-title-row .card-title { flex: 1 1 auto; min-width: 0; }
+.card-status { flex-shrink: 0; }
 .badge {
     font-weight: 500;
     padding: 0.4em 0.75em;
