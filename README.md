@@ -1,32 +1,70 @@
 # Personal Website
 
-Go the the website [:link:](https://firatbatar.com/)  
+My personal website — [firatbatar.com](https://firatbatar.com/) — showcasing my portfolio and background. Built with the [Hugo](https://gohugo.io/) static site generator and deployed to GitHub Pages.
 
-## Description
+## Local development
 
-A personal website that showcases my portfolio and other information about me. It is built using the [Hugo](https://gohugo.io/) static site generator.
+Requires **Hugo 0.160.1 extended** (matches CI — see [.github/workflows/hugo.yml](.github/workflows/hugo.yml)).
 
-## Features
+```sh
+hugo server       # dev server at http://localhost:1313
+hugo server -D    # include drafts
+hugo --gc --minify  # production build into public/
+```
 
-- About Me: Providing information about my background, skills, and interests.
-- Projects: Displaying my projects and work samples.
-<!-- - Blog: Sharing my thoughts, experiences, and tutorials. -->
-<!-- - Contact: Allowing visitors to get in touch with me. -->
+Deployment is automatic: pushes to `main` trigger [.github/workflows/hugo.yml](.github/workflows/hugo.yml), which builds and publishes to GitHub Pages.
 
-<!-- ## Getting Started
+## Repository structure
 
-To get started with this project, follow these steps:
+```
+.
+├── config.toml          # site config, menu, project status labels
+├── archetypes/          # front-matter templates for `hugo new`
+├── content/             # Markdown content — the site's actual copy
+│   ├── about/             # singleton "about me" page
+│   ├── blog/              # blog posts (page bundles)
+│   └── project/           # one page bundle per project (index.md + images)
+├── layouts/             # Hugo templates (custom theme — no external theme)
+│   ├── _default/          # baseof.html and fallbacks
+│   ├── about/             # section.html (list) + single.html (detail)
+│   ├── blog/
+│   ├── project/
+│   ├── index.html         # homepage
+│   └── partials/
+│       ├── components/      # card, jumbotron, blog post card, …
+│       ├── sections/        # homepage sections
+│       └── util/
+├── assets/              # images processed via Hugo's asset pipeline
+│   └── images/
+└── static/              # served as-is at site root
+    ├── bootstrap-5/
+    ├── jquery/
+    ├── css/               # custom styles
+    └── js/                # custom scripts
+```
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
-2. Install Hugo: Follow the installation instructions from the Hugo website.
-3. Navigate to the project directory: `cd your-repo`
-4. Start the local development server: `hugo server`
-5. Open your web browser and visit `http://localhost:1313` to view the website.
+## Managing content
 
-## Contributing
+Scaffold new content with `hugo new`; both project and blog entries are page bundles, so keep each entry's images next to its `index.md`.
 
-Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request. -->
+```sh
+hugo new project/<name>/index.md
+hugo new blog/<name>/index.md
+```
+
+Project front matter includes a `status` field (`active` / `complete` / `inprogress`). The tooltip text for each value is defined centrally under `[params.status]` in [config.toml](config.toml) — edit it there, not in templates.
+
+The top navigation is declared in `[menu]` blocks in [config.toml](config.toml), not via page front matter.
+
+`*.png`, `*.jpg`, `*.jpeg` are tracked via Git LFS (see [.gitattributes](.gitattributes)). If you add a new binary asset type, update `.gitattributes` and confirm it pulls in CI.
+
+## Managing styling
+
+- **Custom CSS / JS** live under [static/css/](static/css/) and [static/js/](static/js/) and are referenced directly from the base layout.
+- **Bootstrap 5** and **jQuery** are vendored under [static/](static/) rather than pulled from a CDN.
+- **Layout-level changes** (markup, structure, component composition) go in [layouts/](layouts/) — start from [layouts/_default/baseof.html](layouts/_default/baseof.html) and the relevant partial under [layouts/partials/](layouts/partials/).
+- **Content-pipeline images** (homepage, about, shared illustrations) live in [assets/images/](assets/images/); images tied to a specific project or post live inside that page bundle.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE).
