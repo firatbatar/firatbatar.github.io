@@ -2,7 +2,7 @@
     <div class="container">
         <div class="section-heading">
             <div>
-                <span class="eyebrow">Work</span>
+                <span class="eyebrow mb-2">Work</span>
                 <h2>{{ .Title }}</h2>
             </div>
             <div class="section-divider"></div>
@@ -11,12 +11,21 @@
             </a>
         </div>
 
-        <div class="project-grid">
-            {{ range first 6 .Pages }}
-                <div class="position-relative">
+        <div id="projectsCarousel" class="carousel">
+            <div class="carousel-inner">
+                {{ range .Pages }}
+                <div class="carousel-item">
                     {{ partial "components/card.html" . }}
                 </div>
-            {{ end }}
+                {{ end }}
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" aria-label="Previous">
+                <i class="fa-solid fa-angle-left"></i>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" aria-label="Next">
+                <i class="fa-solid fa-angle-right"></i>
+            </button>
         </div>
 
         <div class="text-center mt-4 d-md-none">

@@ -476,13 +476,55 @@ section {
 [data-bs-theme="dark"] .badge.text-bg-warning { color: #fbbf24 !important; }
 
 /* ============================================================
-   Project grid (replacing carousel)
+   Projects carousel
    ============================================================ */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.75rem;
+#projectsCarousel { position: relative; padding: 0 2.5rem; }
+#projectsCarousel .carousel-inner {
+    padding: 1rem 0;
+    overflow: hidden;
+    scroll-behavior: smooth;
 }
+#projectsCarousel .carousel-item {
+    padding: 0 .75rem;
+    transition: none;
+}
+@media screen and (min-width: 1100px) {
+    #projectsCarousel .carousel-inner { display: flex; }
+    #projectsCarousel .carousel-item {
+        display: block;
+        margin-right: 0;
+        flex: 0 0 calc(100% / 3);
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: var(--shadow-md);
+    opacity: 1;
+    transition: all var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    z-index: 2;
+}
+.carousel-control-prev { left: 0; }
+.carousel-control-next { right: 0; }
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: var(--surface-muted);
+    transform: translateY(-50%) scale(1.06);
+    color: var(--text);
+}
+.carousel-control-prev i,
+.carousel-control-next i { font-size: 1.05rem; }
 
 /* ============================================================
    Project list page rows
