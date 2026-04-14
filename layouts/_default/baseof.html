@@ -7,8 +7,9 @@
     
     {{/*  Meta tags  */}}
     <meta name="google" content="nositelinkssearchbox">
-    <meta name="googlebot" content="notranslate">
     <meta name="author" content="Fırat Batar">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="twitter:card" content="summary_large_image">
     {{ block "meta_tags" . }} {{ end }}
 
     {{ $bootstrap_css := "bootstrap-5/css/bootstrap.min.css" | relURL }}

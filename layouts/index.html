@@ -4,8 +4,21 @@
     {{/*  Meta tags for Open Graph  */}}
     <meta property="og:title" content="Fırat Batar's Website">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://firatbatar.com">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="firatbatar"/>
     <meta property="og:description" content="The personal website of Fırat Batar.">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fırat Batar",
+        "url": "{{ .Site.BaseURL }}",
+        "sameAs": [
+            "{{ .Site.Params.github }}",
+            "{{ .Site.Params.linkedin }}"
+        ]
+    }
+    </script>
 {{ end }}
 
 {{ define "main" }}
